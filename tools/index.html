@@ -53,6 +53,13 @@
 </head>
 
 <body>
+    <script type="text/javascript" src="./js/lazyload.min.js"></script>
+    <script type="text/javascript">
+        var lzld = lazyload({
+          offset: 800
+        });
+    </script>
+
     <h1>Tools for front-end webapp development on Node.js</h1>
 
     <p>The web development ecosystem has been maturing rapidly over the last couple years, with a deluge of new tools & services designed to help build complex sites faster. With the rise of Node.js & npm, the Javascript community in particular has seen a massive increase in the number of tools aimed at developer productivity with new package managers, build tools, frameworks etc popping up every day.</p>
@@ -64,8 +71,6 @@
     <p>Keeping track of every single tool you'll need, even within the scope of a single project, is not an easy task. Doing it by hand would be near impossible. To address this issue there are workflow wrappers.</p>
 
     <p><a href="http://www.slant.co/topics/1485/~what-are-the-best-workflow-wrappers-for-modern-webapp-front-end-development" target="_blank">Workflow wrappers</a> help manage all of the tools you'll need for front-end webapp development, like build systems, package managers, frameworks, etc., allowing you to get started quickly and keep sane throughout.</p>
-
-    <p></p>
 
     <div class="frame-div">
         <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1485/compare?embed=true"></iframe>
@@ -79,10 +84,8 @@
 
     <p>Build tools allow for rapid iteration and will save vast amounts of time on any project that requires writing anything past vanilla html, css or js.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1276/compare?embed=true"></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/1276/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <p>Here, a watch task, that either comes as a plugin or is already baked into these build tools, will run a set number of tasks the moment a file is modified. Couple that with a tool that <a href="http://www.slant.co/topics/1479/~what-are-the-best-cross-browser-live-update-synchronization-tools" target="_blank">live-updates & synchronizes your browser</a> and you'll be able to see the implemented changes as soon as you save a file.</p>
@@ -95,10 +98,8 @@
 
     <p>The "standard" way of managing front-end JavaScript packages is to just load up a bunch files via script tags. This has many problems such as creating multiple new requests, being hard to manage across the site, hard to manage versions and hard to manage dependency load order. A front end package manager solves some or all of these problems.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1488/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/1488/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <p>Additionally, since JavaScript doesn't come with a way to modularize code (<a href="http://es6rocks.com" target="_blank">yet</a>) you might want to look into <a href="http://www.slant.co/topics/1089/~what-is-the-best-client-side-javascript-module-loader" target="_blank">JavaScript module loaders</a> that will take care of dependency management and concurrency.</p>
@@ -111,10 +112,8 @@
 
     <p>If you want to pick out all your tools by yourself a safe bet is <a href="http://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a>, but you might find <a href="http://www.slant.co/topics/1486/~what-is-the-best-boilerplate-for-modern-webapp-front-end-development" target="_blank">other options</a> more compelling depending on what best fits for a particular project.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1486/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/1486/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <h2>Authoring Abstractions</h2>
@@ -127,10 +126,8 @@
 
     There are many different compiled languages to match your personal preferences. Depending on whether you want better type safety, or a syntax more conductive to functional programming, or better object oriented programming support, you'll want to find the one that you work best with.
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/101/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/101/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <h3>CSS</h3>
@@ -139,10 +136,8 @@
 
     <p>To avoid many of the headaches with CSS, there are <a href="http://www.slant.co/topics/217/~what-is-the-best-css-preprocessor" target="_blank">pre-processors</a>, that greatly increase ease of developing the look of your site. They add things like variables, mixins and functions among other features that make CSS more maintainable and extendable.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/217/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/217/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <h3>HTML</h3>
@@ -151,10 +146,8 @@
 
     <p>A good idea before choosing a templating engine is to figure out how much <a href="http://www.slant.co/topics/1522/~how-much-logic-should-templating-engines-contain%20" target="_blank">logic</a> you want in them.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/51/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/51/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <p>There's also <a href="https://code.google.com/p/zen-coding">Zen Coding</a> and <a href="http://emmet.io" target="_blank">Emmet</a>, editor plugins, that allows for much quicker writing of vanilla HTML, if you decide against using a templating engine.</p>
@@ -165,10 +158,8 @@
 
     <p>There are Node.js frameworks for <a href="http://www.slant.co/topics/389/~which-is-the-best-node-js-web-framework" target="_blank">back-end</a> development, that handle things like routing and authentication, and client side frameworks for <a href="http://www.slant.co/topics/9/~what-is-the-best-javascript-mv-framework" target="_blank">front-end</a> development, for working with how the requested data is displayed and managing the DOM and user interactions.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/9/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/9/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
 
     <p>There's also a list of <a href="http://www.slant.co/topics/150/~what-is-the-best-css-framework" target="_blank">CSS frameworks to choose from</a>. They provide a consistent way of structuring classes and applying styles.</p>
@@ -181,11 +172,11 @@
 
     <p>Now, you don't necessarily have to choose a text editor - you can go with an <a href="http://www.slant.co/topics/1686/~what-are-the-best-javascript-ides" target="_blank">IDE</a>, or even a <a href="http://www.slant.co/topics/713/~what-are-the-best-cloud-ides" target="_blank">cloud IDE</a> - but for most front-end developers IDEs are overkill.</p>
 
-    <p></p>
-
     <div class="frame-div">
-        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/12/compare?embed=true" ></iframe>
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" data-src="http://www.slant.co/topics/12/compare?embed=true" onload="lzld(this)"></iframe>
     </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/12/~what-is-the-best-programming-text-editor" target="_blank">A comparison of text editors</a></p>
 
     <p style="font-size: small; border-top: 1px solid #ccc; text-align: center; padding-top: 10px;">For suggestions on improving the article or any other comments, email <a href="mailto:andris@slant.co?subject=Tools">andris@slant.co</a>.</p>
 </body>
