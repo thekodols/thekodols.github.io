@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tools for front-end webapp development on Node.js</title>
+    <link href="main.css" rel="stylesheet" type="text/css">
+    <link href="normalize.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    body {
+            margin: auto;
+            width: 900px;
+            font-family: Georgia;
+            background: url(sos.png);
+        }
+        .frame-div {
+            margin: auto;
+            width: 850px;
+        }
+        .frame-compare
+        {
+            width    : 850px;
+            height   : 400px;
+            border: 1px solid #ccc;
+        }
+        h1,h2,h3 {
+            font-weight: 600;
+            letter-spacing: -1px;
+            line-height: 1.25em;
+        }
+        h2 {
+            font-size: 1.60em;
+            margin-left: 25px;
+        }
+        h3 {
+            font-size: 1.50em;
+            margin-left: 50px;
+        }
+        p {
+            margin-left: auto;
+            margin-right: auto;
+            width: 720px;
+            font-size: 1.35em;
+            line-height: 1.6em;
+            font-weight: 300;
+        }
+        a, a:hover, a:visited {
+            color: #39f;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #f39;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tools for front-end webapp development on Node.js</h1>
+
+    <p>The intended goal of the article is to help get a sense of available tools and a typical workflow within the scope of front-end webapp development on Node.js.</p>
+
+    <p>It's written in a way as to provide high level context for links and embeds within it that discuss each of the topics in more detail.</p>
+
+    <p>At the moment it covers workflow wrappers, build systems, package management, boilerplate, authoring abstractions, frameworks and development environments.</p>
+
+    <p>The plan is to cover testing, profiling, performance optimizaion, hosting, deployment, monitoring and <a href="mailto:andris@slant.co?subject=Tools">anything I might have forgotten</a> with further iterations of the article.</p>
+
+    <p>With that out of the way, let's get to it.</p>
+
+    <h2>Workflow Wrappers</h2>
+
+    <p>Keeping track of every single tool you'll need, even within the scope of a single project, is not an easy task. Doing it by hand would be near impossible. To address this issue there are workflow wrappers.</p>
+
+    <p><a href="http://www.slant.co/topics/1485/~what-are-the-best-workflow-wrappers-for-modern-webapp-front-end-development" target="_blank">Workflow wrappers</a> help manage all of the tools you'll need for front-end webapp development, like build systems, package managers, frameworks, etc., allowing you to get started quickly and keep sane throughout.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1485/compare?embed=true"></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/1485/~what-is-the-best-workflow-wrapper-for-modern-webapp-front-end-development" target="_blank">A comparison of workflow wrappers</a></p>
+
+    <p>All of these wrappers are somewhat opinionated, meaning they enforce (or strongly suggest) a certain set of tools. Some do it more, some do it less. And if you're just starting out, it's a good idea to stick with their suggested workflows and see what parts to switch out for others when you've reached a certain understanding of how these tools interoperate.</p>
+
+    <h2>Build Systems</h2>
+
+    <p><a href="http://www.slant.co/topics/1276/~what-is-the-best-node-js-build-system-task-runner" target="_blank">Build systems</a> (a.k.a. task runners) provide a standardized way to execute the commands you need to build and serve your site. They take care of things like running a development server, automatic linting, compiling, concatenating files, minifying, running tests, deploying, etc. They automate your workflow so you don't have to do repetitive tasks each time you make an edit.</p>
+
+    <p>Build tools allow for rapid iteration and will save vast amounts of time on any project that requires writing anything past vanilla html, css or js.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1276/compare?embed=true"></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/1276/~what-is-the-best-node-js-build-system-task-runner" target="_blank">A comparison of Node.js build systems / task runners</a></p>
+
+    <p>Here, a watch task, that either comes as a plugin or is already baked into these build tools, will run a set number of tasks the moment a file is modified. Couple that with a tool that <a href="http://www.slant.co/topics/1479/~what-are-the-best-cross-browser-live-update-synchronization-tools" target="_blank">live-updates & synchronizes your browser</a> and you'll be able to see the implemented changes as soon as you save a file.</p>
+
+    <p>Note that build systems don't excuse you from not knowing how things operate under the hood.</p>
+
+    <h2>Package management</h2>
+
+    <p>To help you install, upgrade and manage external libraries you can use <a href="http://www.slant.co/topics/1488/~what-are-the-best-front-end-package-managers" target="_blank">front-end package managers</a>.</p>
+
+    <p>The "standard" way of managing front-end JavaScript packages is to just load up a bunch files via script tags. This has many problems such as creating multiple new requests, being hard to manage across the site, hard to manage versions and hard to manage dependency load order. A front end package manager solves some or all of these problems.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1488/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/1488/~what-is-the-best-front-end-package-manager" target="_blank">A comparison of front-end package managers</a></p>
+
+    <p>Additionally, since JavaScript doesn't come with a way to modularize code (<a href="http://es6rocks.com" target="_blank">yet</a>) you might want to look into <a href="http://www.slant.co/topics/1089/~what-is-the-best-client-side-javascript-module-loader" target="_blank">JavaScript module loaders</a> that will take care of dependency management and concurrency.</p>
+
+    <h2>Boilerplate</h2>
+
+    <p>Boilerplate is any code that's included in the beginning of a project with little or no alteration. It lays the foundation of what you're building. Taking care of common design principles, like responsive layout, folder structure, etc so you don't have to build them from scratch each time you start a new project. A good boilerplate will follow years of best practices.</p>
+
+    <p>There are a few things to keep in mind. Since it's any foundation code, it can include support for authoring abstractions, specific tools or even complete frameworks.</p>
+
+    <p>If you want to pick out all your tools by yourself a safe bet is <a href="http://html5boilerplate.com/" target="_blank">HTML5 Boilerplate</a>, but you might find <a href="http://www.slant.co/topics/1486/~what-is-the-best-boilerplate-for-modern-webapp-front-end-development" target="_blank">other options</a> more compelling depending on what best fits for a particular project.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/1486/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/1486/~what-is-the-best-boilerplate-for-modern-webapp-front-end-development" target="_blank">A comparison of boilerplates for modern webapps</a></p>
+
+    <h2>Authoring Abstractions</h2>
+
+    <p>As far as the browser is concerned there are three languages - HTML for structure, CSS for layout and style, and JS for anything dynamic. For various reasons, but mainly ease of use and speed, you might want to consider writing in languages that compile down to each of these three languages instead of writing them directly.</p>
+
+    <h3>JavaScript</h3>
+
+    <p>JavaScript might be one of the <a href="https://wiki.theory.org/YourLanguageSucks#JavaScript_sucks_because" target="_blank">most hated languages</a> around, but we're <a href="http://www.slant.co/topics/1515/~what-are-the-best-solutions-to-the-javascript-problem-haskell-like-front-end-development" target="_blank">mostly</a> stuck with it if we intend to write a modern webapp. So to work around some of the questionable parts of JS here's a list of <a href="http://www.slant.co/topics/101/~what-is-the-best-language-that-compiles-to-javascript" target="_blank">languages that compile down to JavaScript</a>.</p>
+
+    There are many different compiled languages to match your personal preferences. Depending on whether you want better type safety, or a syntax more conductive to functional programming, or better object oriented programming support, you'll want to find the one that you work best with.
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/101/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/101/~what-is-the-best-language-that-compiles-to-javascript" target="_blank">A comparison of languages that compile down to JS</a></p>
+
+    <h3>CSS</h3>
+
+    <p>Writing CSS has always felt hackish. For example, there are no variables in CSS so deciding to change your site's color scheme just slightly involves having to look for each instance of a particular color for each element. Not the most efficient use of your time.</p>
+
+    <p>To avoid many of the headaches with CSS, there are <a href="http://www.slant.co/topics/217/~what-is-the-best-css-preprocessor" target="_blank">pre-processors</a>, that greatly increase ease of developing the look of your site. They add things like variables, mixins and functions among other features that make CSS more maintainable and extendable.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/217/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/217/~what-is-the-best-css-preprocessor" target="_blank">A comparison of CSS pre-processors</a></p>
+
+    <h3>HTML</h3>
+
+    <p>For HTML, there are templating engines. <a href="http://www.slant.co/topics/51/~what-is-the-best-javascript-templating-engine" target="_blank">Templating engines</a> take in a template file and a data set, interpolates them, outputting HTML. Not only do most templating engines provide a shorthand, human-readable way of writing HTML, they also make sure that the markup is semantic and accessibility compliant.</p>
+
+    <p>A good idea before choosing a templating engine is to figure out how much <a href="http://www.slant.co/topics/1522/~how-much-logic-should-templating-engines-contain%20" target="_blank">logic</a> you want in them.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/51/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/51/~what-is-the-best-javascript-templating-engine" target="_blank">A comparison of JavaScript templating engines</a></p>
+
+    <p>There's also <a href="https://code.google.com/p/zen-coding">Zen Coding</a> and <a href="http://emmet.io" target="_blank">Emmet</a>, editor plugins, that allows for much quicker writing of vanilla HTML, if you decide against using a templating engine.</p>
+
+    <h2>Frameworks</h2>
+
+    <p>Frameworks are a layer of abstraction intended to help you build your application quickly. It is one of the bigger commitments you can make, but also has the most impact on development speed.</p>
+
+    <p>There are Node.js frameworks for <a href="http://www.slant.co/topics/389/~which-is-the-best-node-js-web-framework" target="_blank">back-end</a> development, that handle things like routing and authentication, and client side frameworks for <a href="http://www.slant.co/topics/9/~what-is-the-best-javascript-mv-framework" target="_blank">front-end</a> development, for working with how the requested data is displayed and managing the DOM and user interactions.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/9/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/9/~what-is-the-best-javascript-mv-framework" target="_blank">A comparison of JS front-end frameworks</a></p>
+
+    <p>There's also a list of <a href="http://www.slant.co/topics/150/~what-is-the-best-css-framework" target="_blank">CSS frameworks to choose from</a>. They provide a consistent way of structuring classes and applying styles.</p>
+
+    <p>As with all tools, but frameworks especially, working without one first will help you understand what they add to your workflow. A good idea is trying out a few of them before picking one that feels comfortable to you.</p>
+
+    <h2>Development Environments</h2>
+
+    <p>Choosing the right <a href="http://www.slant.co/topics/12/~what-is-the-best-programming-text-editor" target="_blank">text editor</a>, exploring its possibilities and <a href="http://dotfiles.github.com/" target="_blank">setting it up</a> correctly is essential. Make sure you have <a href="http://www.slant.co/topics/197/~what-are-your-favorite-plugins-for-sublime-text" target="_blank">good plugins</a> for common actions, that take care of things like linting, syntax highlighting, and autocomplete, but that's more or less self-explanatory.</p>
+
+    <p>Now, you don't necessarily have to choose a text editor - you can go with an <a href="http://www.slant.co/topics/1686/~what-are-the-best-javascript-ides" target="_blank">IDE</a>, or even a <a href="http://www.slant.co/topics/713/~what-are-the-best-cloud-ides" target="_blank">cloud IDE</a> - but for most front-end developers IDEs are overkill.</p>
+
+    <p></p>
+
+    <div class="frame-div">
+        <iframe class="frame-compare" frameborder="0" scrolling="yes" src="http://www.slant.co/topics/12/compare?embed=true" ></iframe>
+    </div>
+
+    <p>View in fullscreen: <a href="http://www.slant.co/topics/12/~what-is-the-best-programming-text-editor" target="_blank">A comparison of text editors</a></p>
+
+    <p style="font-size: small; border-top: 1px solid #ccc; text-align: center; padding-top: 10px;">For suggestions on improving the article or any other comments, email <a href="mailto:andris@slant.co?subject=Tools">andris@slant.co</a>.</p>
+</body>
+</html>
